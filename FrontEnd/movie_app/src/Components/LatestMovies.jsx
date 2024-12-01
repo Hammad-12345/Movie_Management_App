@@ -85,7 +85,7 @@ const LatestMovies = () => {
           </div>
           <div className="text-4xl text-white font-bold">Latest Movies</div>
         </div>
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
           {movieslatest.map((element) => {
             return (
               <>

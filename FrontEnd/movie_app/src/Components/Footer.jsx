@@ -8,10 +8,10 @@ const Footer = () => {
       {/* Footer Design Start */}
       <div className="flex flex-col py-8 px-4 gap-5 footer_design">
         {/* Footer Box 1 */}
-        <div className="flex justify-between items-center footer_box_one">
+        <div className="flex md:flex-row flex-col justify-between items-center footer_box_one">
           <img src={logo} alt="" srcset="" />
           <div>
-            <ul className="flex gap-10 items-center list-none ps-0">
+            <ul className="flex sm:flex-row flex-col gap-10 items-center list-none ps-0">
               <Link to={"/"} style={{ textDecoration: "none" }}>
                 <li className="text-sm text-white uppercase hover:text-yellow-300 font-bold">Home</li>
               </Link>
@@ -34,8 +34,8 @@ const Footer = () => {
 
         {/* Footer Box 2 */}
 
-        <div className="footer_box_two flex justify-between">
-        <ul className="flex gap-10 items-center list-none ps-0">
+        <div className="footer_box_two flex md:flex-row flex-col items-center justify-between">
+        <ul className="flex sm:flex-row flex-col gap-10 items-center list-none ps-0">
               <Link to={"/"} style={{textDecoration:"none"}}>
               <li className="text-sm text-white uppercase hover:text-yellow-300 font-bold">Faq</li>
               </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
               <li className="text-sm text-white uppercase hover:text-yellow-300 font-bold" >Privacy</li> 
               </Link>
             </ul>
-            <ul className="flex gap-7 list-none">
+            <ul className="flex gap-7 list-none p-0">
               <li className="w-10 h-10 rounded-full flex justify-center items-center bg-black">
                 <FaFacebook  className="text-white hover:text-yellow-300 cursor-pointer"/>
               </li>
@@ -71,7 +71,7 @@ const Footer = () => {
 
       </div>
       <div className="py-8 px-4" style={{backgroundColor:"#171b22"}}>
-          <div className="text-white text-sm">
+          <div className="text-white text-sm md:text-start text-center">
           Copyright © 2024. All Rights Reserved By <span className="text-yellow-300">Movflx</span>
           </div>
         </div>

@@ -5,10 +5,10 @@ import { FaVideo } from "react-icons/fa";
 const OurService = () => {
   return (
     <>
-      <div className="our_services flex items-center px-6 gap-28">
+      <div className="our_services flex lg:flex-row flex-col items-center px-6 lg:py-0 py-12 xl:gap-28 gap-16">
         {/* Our Services Image Box */}
         <div>
-          <img src={serverimage} alt="" srcset="" />
+          <img className="our_service_image" src={serverimage} alt="" srcset="" />
         </div>
         {/* Our Services Content Box */}
         <div className="flex flex-col gap-6">
@@ -19,7 +19,7 @@ const OurService = () => {
               <span className="text-sm text-gray-300 uppercase">Our services</span>
             </div>
             <div>
-              <p className="text-white my-0 text-4xl w-96 font-semibold">
+              <p className="text-white my-0 text-4xl sm:w-96 font-semibold">
                 Download Your Shows Watch Offline.
               </p>
             </div>
@@ -35,7 +35,7 @@ const OurService = () => {
 
           {/* our services content box 2 */}
           <div className="flex flex-col gap-6">
-            <div className="flex gap-4 items-center">
+            <div className="flex sm:flex-row flex-col gap-4 items-center">
               <div className="w-20 h-20 rounded-full border-dotted border-yellow-300  flex flex-col items-center justify-center">
                 <div className="w-4/5 h-4/5 flex flex-col items-center justify-center rounded-full hover:bg-yellow-300 ">
                 <FaTv className="text-white text-4xl" />
@@ -43,12 +43,12 @@ const OurService = () => {
               </div>
               <div className="flex flex-col gap-3">
                 <div className="text-white font-bold">Enjoy on Your TV.</div>
-                <div className="text-gray-400 w-80 font-bold">Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</div>
+                <div className="text-gray-400 sm:w-80 font-bold">Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</div>
               </div>
             </div>
             <div className="line">
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex sm:flex-row flex-col gap-4 items-center">
             <div className="w-20 h-20 rounded-full border-dotted border-yellow-300 flex flex-col items-center justify-center">
             <div className="w-4/5 h-4/5 flex flex-col items-center justify-center rounded-full hover:bg-yellow-300">
             <FaVideo className="text-white text-4xl" />
@@ -56,11 +56,12 @@ const OurService = () => {
             </div>
             <div className="flex flex-col gap-3">
                 <div className="text-white font-bold">Watch Everywhere.</div>
-                <div className="text-gray-400 w-80 font-bold">Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</div>
+                <div className="text-gray-400 sm:w-80 font-bold">Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </>
   );

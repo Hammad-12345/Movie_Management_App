@@ -2,12 +2,18 @@ body {
   font-family: arial;
   box-sizing: border-box;
 }
+*
+{
+  box-sizing: border-box;
+}
 
 .input-label {
   pointer-events: none; /* Prevent the label from being clickable */
   font-size: 1rem;
 }
-
+input{
+  width: 100%;
+}
 /* When input is focused or has a value, move the label */
 input:focus + .input-label,
 input:not(:placeholder-shown) + .input-label {
@@ -26,23 +32,7 @@ input:not(:placeholder-shown) + .input-label {
 .banner_movie_app p {
   width: 660px;
 }
-.header {
-  width: 100%;
-  padding: 10px 16px;
-  position: fixed;
-}
-.headeranimate {
-  animation: headeranimation 0.6s linear forwards;
-}
-@keyframes headeranimation {
-  0% {
-    top: -35px;
-  }
-  100% {
-    top: 0px;
-    background-color: #171d22;
-  }
-}
+
 .Movie_banner {
   height: 550px;
   background-image: url("./Images/breadcrumbbg.jpg");
@@ -66,7 +56,7 @@ input:not(:placeholder-shown) + .input-label {
   height: 1px;
 }
 .our_services {
-  height: 750px;
+  min-height: 750px;
   background-image: url("./Images/servicesbg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -97,7 +87,7 @@ input:not(:placeholder-shown) + .input-label {
 }
 .Detail_Page_banner
 {
-  height: 750px;
+  min-height: 750px;
   background-image: url('./Images/movie_details_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -132,4 +122,74 @@ input:not(:placeholder-shown) + .input-label {
   background-position: 50% 50%;
   background-color: #171d22;
   background-blend-mode: overlay;
+}
+/* @media (min-width: 1025px) { */
+  .header {
+    width: 100%;
+    padding: 10px 16px;
+    position: fixed;
+  }
+  .headeranimate {
+    animation: headeranimation 0.6s linear forwards;
+  }
+  @keyframes headeranimation {
+    0% {
+      top: -35px;
+    }
+    100% {
+      top: 0px;
+      background-color: #171d22;
+    }
+  }
+
+@media (max-width:1024px) {
+  .menu_bar
+  {
+    transform:scaleX(0);
+  }
+  .menu_bar_open_animation
+  {
+    animation: menuopenanimation 0.3s linear forwards;
+    transform-origin: 0.0;
+  }
+  @keyframes menuopenanimation {
+    0%
+    {
+      transform: scaleX(0);
+    }
+    100%
+    {
+      transform: scaleX(1);
+    }
+  }
+  .menu_bar_close_animation
+  {
+    animation: menucloseanimation 0.3s linear forwards;
+    transform-origin: 0.0;
+  }
+  @keyframes menucloseanimation {
+    0%
+    {
+      transform: scaleX(1);
+    }
+    100%
+    {
+      transform: scaleX(0);
+    }
+  }
+}
+@media (max-width:768px) {
+  .banner_movie_app p {
+    width: 100%;
+  }
+  .our_service_image
+  {
+    width: 100%;
+  }
+}
+.signin_form
+{
+  max-width: 100%;
+  width: 400px;
+  /* padding */
 }

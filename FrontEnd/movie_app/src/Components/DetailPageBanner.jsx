@@ -24,7 +24,7 @@ const DetailPageBanner = () => {
   return (
     <>
       <div className="Detail_Page_banner flex flex-col justify-center">
-        <div className="detail_object_box px-4 flex gap-16">
+        <div className="detail_object_box px-4 flex sm:flex-row flex-col sm:my-0 mt-32 mb-12 gap-16">
           {/* image box */}
           <img
             src={detailobject.artworkUrl100}

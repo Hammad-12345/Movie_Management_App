@@ -107,8 +107,8 @@ const handleresetfun = ()=>
   return (
     <>
     <ToastContainer />
-      <div className="flex flex-col justify-center items-center min-h-screen">
-        <div className="w-full flex flex-col gap-8 signup_form px-8 py-3 max-w-sm h-96 shadow">
+      <div className="flex flex-col justify-center items-center min-h-screen sm:p-0 px-16">
+        <div className="flex flex-col gap-8 signin_form px-8 py-6 shadow">
           <div className="flex justify-center gap-1">
             <h1>Login</h1>
           </div>
@@ -182,7 +182,7 @@ const handleresetfun = ()=>
               {loading ? "Logging in..." : "Log in"}
             </button>
 
-            <div className="flex justify-center gap-2 text-sm">
+            <div className="flex sm:flex-row flex-col items-center justify-center gap-2 text-sm text-center">
               Don't Have an Account? <Link to={"/register"}>Sign up</Link>
             </div>
           </div>

@@ -91,7 +91,7 @@ const Register = () => {
   return (
     <>
       <ToastContainer />
-      <div className="flex flex-col justify-center items-center min-h-screen">
+      <div className="flex flex-col justify-center items-center min-h-screen sm:p-0 px-4 py-8">
         <div className="w-full flex flex-col gap-8 signup_form px-8 py-3 max-w-md shadow">
           <div className="flex flex-col items-center gap-1">
             <h1>Sign up</h1>
@@ -194,7 +194,7 @@ const Register = () => {
               )}
               {loading ? "Signing up..." : "Sign up"}
             </button>
-            <div className="flex justify-center gap-2 text-sm">
+            <div className="flex sm:flex-row flex-col items-center justify-center sm:gap-2 gap-0 text-sm text-center">
               Already have an account <Link to={"/login"}>Sign in</Link>
             </div>
           </div>

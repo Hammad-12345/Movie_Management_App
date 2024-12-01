@@ -5,7 +5,7 @@ const MovieBanner = () => {
   return (
     <>
     <div className='Movie_banner flex flex-col items-center justify-center gap-4'>
-        <div className='text-6xl text-white'>Our <span className='text-yellow-300'>Movie</span></div>
+        <div className='text-6xl text-white sm:text-start text-center font-bold uppercase'>Our <span className='text-yellow-300'>Movie</span></div>
         <div className='flex gap-4 items-center'>
             <Link to={"/"} style={{textDecoration:"none"}}className='text-yellow-300 text-md'>Home</Link>
             <hr className='h-3 w-0'/>

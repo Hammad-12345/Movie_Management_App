@@ -41,7 +41,7 @@ const FavouriteMoviesList = () => {
         </div>
         {
             favouritemovieslist.length > 0 ? <>
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
                 {favouritemovieslist.map((element) => {
                     return (
                       <>
