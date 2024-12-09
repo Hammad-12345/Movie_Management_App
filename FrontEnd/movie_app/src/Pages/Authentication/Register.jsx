@@ -5,7 +5,6 @@ import { useFormik } from "formik";
 import { Link } from "react-router-dom";
 import { Registerschema } from "./Validation_Schema/Schema";
 import axios from "axios";
-import { config } from "../../config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -43,7 +42,7 @@ const Register = () => {
   const SubmitSignupForm = async (value) => {
     try {
       setLoading(true);
-      const res = await axios.post(`${config.ApiUrl}user/Register`, value);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}user/Register`, value);
       if (res.data.status === 200) {
         setTimeout(() => {
         setLoading(false);

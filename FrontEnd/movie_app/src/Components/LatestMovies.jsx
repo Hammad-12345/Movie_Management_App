@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { config } from "../config";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
@@ -34,9 +33,10 @@ const LatestMovies = () => {
   const user = JSON.parse(localStorage.getItem("user"))
   const [movieslatest, updatemovieslatest] = useState([]);
   const navigate = useNavigate();
+  console.log("API URL:", process.env.REACT_APP_LATEST_ITUNE_API);
   const latestmoviesfun = async () => {
     try {
-      const res = await axios.get(`${config.latest4ituneapi}`);
+      const res = await axios.get(process.env.REACT_APP_LATEST_ITUNE_API);
       updatemovieslatest([...res.data.results]);
     } catch (error) {}
   };
@@ -48,7 +48,7 @@ const LatestMovies = () => {
     if(AuthRoutes)
     {
       try {
-        const res = await axios.post(`${config.ApiUrl}Favourite/Movie`, {element,ID:user._id},
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}Favourite/Movie`, {element,ID:user._id},
           {
             headers: {
               Authorization: `Bearer ${AuthRoutes}`,

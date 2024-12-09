@@ -5,7 +5,6 @@ import { loginschema } from "./Validation_Schema/Schema";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import icons
 import axios from "axios";
-import { config } from "../../config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
@@ -13,7 +12,7 @@ import { LoggedIn } from "../../ReduxToolkit/Slice/StoreToken";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false); // Loading state
   const [showPassword, setShowPassword] = useState(false); // Password visibility toggle
 
@@ -29,58 +28,52 @@ const Login = () => {
       theme: "light",
     });
 
-    const notifyerror = (data) =>
-      toast.error(data, {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-const loginfunction = async(value)=>
-{
-  try {
-    setLoading(true);
-      const res = await axios.post(`${config.ApiUrl}user/Login`, value);
-      if(res.data.status === 200)
-      {
+  const notifyerror = (data) =>
+    toast.error(data, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  const loginfunction = async (value) => {
+    try {
+      setLoading(true);
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_URL}user/Login`,
+        value
+      );
+      if (res.data.status === 200) {
         setTimeout(() => {
-          setLoading(false)
+          setLoading(false);
           notify(res.data.message);
-          handleresetfun()
+          handleresetfun();
           setTimeout(() => {
             localStorage.setItem("auth", JSON.stringify(res.data.token));
             localStorage.setItem("user", JSON.stringify(res.data.user));
-            dispatch(LoggedIn(res.data.token))
-            navigate('/')
-            console.log(res)
+            dispatch(LoggedIn(res.data.token));
+            navigate("/");
+            console.log(res);
           }, 2000);
-
         }, 2000);
-      }
-      else if(res.data.status === 401)
-      {
+      } else if (res.data.status === 401) {
         setTimeout(() => {
-          setLoading(false)
+          setLoading(false);
           notifyerror(res.data.message);
-
         }, 2000);
-      }
-      else 
-      {
+      } else {
         setTimeout(() => {
-          setLoading(false)
+          setLoading(false);
           notifyerror(res.data.message);
-
         }, 2000);
       }
-  } catch (error) {
-    notifyerror(error.message);
-  }
-}
+    } catch (error) {
+      notifyerror(error.message);
+    }
+  };
   const {
     values,
     errors,
@@ -97,16 +90,15 @@ const loginfunction = async(value)=>
     validationSchema: loginschema,
     onSubmit: (value) => {
       // Add your login API call here
-      loginfunction(value)
+      loginfunction(value);
     },
   });
-const handleresetfun = ()=>
-{
-  resetForm()
-}
+  const handleresetfun = () => {
+    resetForm();
+  };
   return (
     <>
-    <ToastContainer />
+      <ToastContainer />
       <div className="flex flex-col justify-center items-center min-h-screen sm:p-0 px-16">
         <div className="flex flex-col gap-8 signin_form px-8 py-6 shadow">
           <div className="flex justify-center gap-1">
@@ -144,7 +136,11 @@ const handleresetfun = ()=>
                 className="absolute top-3 right-3 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? <FaEyeSlash style={{color:"gray"}}/> : <FaEye style={{color:"gray"}}/>}
+                {showPassword ? (
+                  <FaEyeSlash style={{ color: "gray" }} />
+                ) : (
+                  <FaEye style={{ color: "gray" }} />
+                )}
               </span>
             </div>
           </form>

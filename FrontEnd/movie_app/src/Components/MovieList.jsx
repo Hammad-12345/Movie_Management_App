@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { config } from "../config";
 import axios from "axios";
 import { FaHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -41,10 +40,11 @@ const MovieList = () => {
   const [filtermovieresponse, updatefiltermovieresponse] = useState("");
   console.log(movieslatest);
   console.log(TotalMovieList);
+  console.log("API URL:", process.env.REACT_APP_API_URL);
   const fetchmovielist = async () => {
     const movie_list_box = document.querySelector("#movie_list_box");
     try {
-      const res = await axios.get(`${config.ApiUrl}movieslist`, {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}movieslist`, {
         headers: {
           Authorization: "",
         },
@@ -97,7 +97,7 @@ const MovieList = () => {
     if (AuthRoutes) {
       try {
         const res = await axios.post(
-          `${config.ApiUrl}Favourite/Movie`,
+          `${process.env.REACT_APP_API_URL}Favourite/Movie`,
           { element, ID: user._id },
           {
             headers: {
