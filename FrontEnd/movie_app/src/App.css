@@ -95,7 +95,6 @@ input:not(:placeholder-shown) + .input-label {
 }
 .movie_list
 {
-  min-height: 700px;
   background-image: url("./Images/ucm_bg_shape.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -115,7 +114,6 @@ input:not(:placeholder-shown) + .input-label {
 }
 .favourite_movie_list
 {
-  min-height: 700px;
   background-image: url("./Images/ucm_bg_shape.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -192,4 +190,53 @@ input:not(:placeholder-shown) + .input-label {
   max-width: 100%;
   width: 400px;
   /* padding */
+}
+.loader_animation_box1
+{
+  transform: scaleY(0);
+  animation: loaderanimationbox1 0.7s linear forwards infinite;
+  /* transform-origin: 1.0; */
+}
+@keyframes loaderanimationbox1 {
+  0%
+  {
+    transform: scaleY(0);
+  }
+  100%
+  {
+    transform: scaleY(1);
+  }
+}
+.loader_animation_box2
+{
+  transform: scaleY(0);
+  animation: loaderanimationbox2 0.7s 0.5s linear forwards infinite;
+  /* transform-origin: 0.1; */
+}
+@keyframes loaderanimationbox2 {
+  0%
+  {
+    transform: scaleY(0);
+  }
+  100%
+  {
+    transform: scaleY(1);
+  }
+}
+
+.loader_animation_box3
+{
+  transform: scaleY(0);
+  animation: loaderanimationbox3 0.7s 1s linear forwards infinite;
+  /* transform-origin: 0.1; */
+}
+@keyframes loaderanimationbox3 {
+  0%
+  {
+    transform: scaleY(0);
+  }
+  100%
+  {
+    transform: scaleY(1);
+  }
 }

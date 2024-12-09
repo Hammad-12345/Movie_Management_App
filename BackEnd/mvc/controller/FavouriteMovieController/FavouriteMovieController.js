@@ -27,7 +27,15 @@ const fetchfavouritemovieuser =async(req,res) =>
     const movieId = req.params.id; // Access the 'id' route parameter
     try {
         const movies = await FavouriteMovieModel.find({ ID:movieId });
-        res.send({movies:movies,status:200})
+        if(movies.length > 0)
+        {
+            res.send({movies:movies,status:200})
+        }
+        else 
+        {
+            res.send({message:"No Favourite Movies",status:404})
+        }
+        
     } catch (error) {
         res.send({error:error})
     }
