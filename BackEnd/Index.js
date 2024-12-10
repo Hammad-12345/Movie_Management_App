@@ -18,7 +18,10 @@ connectiondb()
 app.use(cors());
 app.use(express.json());
 
-
+app.get("/",(req,res)=>
+{
+  res.send("hello")
+})
 app.get("/movieslist",async(req,res)=>
 {
   try {
