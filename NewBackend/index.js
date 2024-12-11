@@ -1,13 +1,32 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
-dotenv.config();
-const port = process.env.PORT || 3000;
-app.use(express.json());
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
 
+// Load environment variables from .env file
+dotenv.config();
+
+// connect with database
+connectiondb()
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.get("/",(req,res)=>
+  {
+    res.send("hello")
+  })
+  app.get("/movieslist",async(req,res)=>
+  {
+    try {
+      const response = await axios.get('https://itunes.apple.com/search?term=star&country=au&media=movie&all');
+      res.send(response.data);  // Return the response to the frontend
+    } catch (error) {
+      res.status(500).json({ error: 'Error fetching data from iTunes API' });
+    }
+  })
+
+  // listen server
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
