@@ -44,7 +44,7 @@ const MovieList = () => {
   const fetchmovielist = async () => {
     const movie_list_box = document.querySelector("#movie_list_box");
     try {
-      const res = await axios.get(`${process.env.REACT_APP_API_URL}movieslist`, {
+      const res = await axios.get(`https://movie-management-app-server.vercel.app/movieslist`, {
         headers: {
           Authorization: "",
         },
