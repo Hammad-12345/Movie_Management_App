@@ -26,8 +26,8 @@ app.get("/movieslist", async (req, res) => {
     res.status(500).json({ error: "Error fetching data from iTunes API" });
   }
 });
-app.use("/user", userrouter);
-app.use("/Favourite",FavouriteMovierouter)
+// app.use("/user", userrouter);
+// app.use("/Favourite",FavouriteMovierouter)
 
 // listen server
 const port = process.env.PORT || 3000;
