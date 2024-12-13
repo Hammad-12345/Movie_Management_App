@@ -27,7 +27,7 @@ app.get("/movieslist", async (req, res) => {
   }
 });
 app.use("/user", userrouter);
-app.use('/Favourite',FavouriteMovierouter)
+app.use("/Favourite",FavouriteMovierouter)
 
 // listen server
 const port = process.env.PORT || 3000;
