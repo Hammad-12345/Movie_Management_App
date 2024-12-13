@@ -4,6 +4,8 @@ const app = express();
 const dotenv = require("dotenv");
 const { connectiondb } = require("./DB/Connect");
 const axios = require("axios");
+const { userrouter } = require('./mvc/route/AuthRoutes/UserAuthRoutes')
+const { FavouriteMovierouter } = require('./mvc/route/FavouriteMovieRoutes/FavouriteMovieRoute')
 // Load environment variables from .env file
 dotenv.config();
 
@@ -27,7 +29,7 @@ app.get("/movieslist", async (req, res) => {
   }
 });
 app.use("/user", userrouter);
-// app.use("/Favourite",FavouriteMovierouter)
+app.use("/Favourite",FavouriteMovierouter)
 
 // listen server
 const port = process.env.PORT || 3000;
