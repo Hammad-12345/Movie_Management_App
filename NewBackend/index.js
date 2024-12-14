@@ -4,7 +4,7 @@ const app = express();
 const dotenv = require("dotenv");
 const { connectiondb } = require("./DB/Connect");
 const axios = require("axios");
-const { UserRegister, UserLogin } = require("./mvc/controller/Authcontroller/UserAuthcontroller");
+// const { UserRegister, UserLogin } = require("./mvc/controller/Authcontroller/UserAuthcontroller");
 // const JWT = require("jsonwebtoken");
 // const { FavouriteMovierouter } = require('./mvc/route/FavouriteMovieRoutes/FavouriteMovieRoute')
 // Load environment variables from .env file
