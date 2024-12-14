@@ -29,9 +29,9 @@ app.get("/movieslist", async (req, res) => {
     res.status(500).json({ error: "Error fetching data from iTunes API" });
   }
 });
-app.post('/user/Register',UserRegister)
+// app.post('/user/Register',UserRegister)
 
-app.post('/user/Login',UserLogin)
+// app.post('/user/Login',UserLogin)
 // app.use("/Favourite",FavouriteMovierouter)
 
 // listen server
