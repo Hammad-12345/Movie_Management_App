@@ -4,8 +4,7 @@ const app = express();
 const dotenv = require("dotenv");
 const { connectiondb } = require("./DB/Connect");
 const axios = require("axios");
-// const { UserRegister, UserLogin } = require("./mvc/controller/Authcontroller/UserAuthcontroller");
-// const JWT = require("jsonwebtoken");
+// const { userrouter } = require('./mvc/route/AuthRoutes/UserAuthRoutes')
 // const { FavouriteMovierouter } = require('./mvc/route/FavouriteMovieRoutes/FavouriteMovieRoute')
 // Load environment variables from .env file
 dotenv.config();
@@ -29,9 +28,7 @@ app.get("/movieslist", async (req, res) => {
     res.status(500).json({ error: "Error fetching data from iTunes API" });
   }
 });
-// app.post('/user/Register',UserRegister)
-
-// app.post('/user/Login',UserLogin)
+// app.use("/user", userrouter);
 // app.use("/Favourite",FavouriteMovierouter)
 
 // listen server
